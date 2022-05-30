@@ -1,0 +1,15 @@
+import PropTypes from 'prop-types';
+import { memo } from 'react';
+import { Styled__Component__ } from './styled.components';
+
+function __Component__(props) {
+  return (
+    <Styled__Component__>
+      <span>__Component__</span>
+    </Styled__Component__>
+  );
+}
+
+__Component__.propTypes = {};
+
+export default memo(__Component__);

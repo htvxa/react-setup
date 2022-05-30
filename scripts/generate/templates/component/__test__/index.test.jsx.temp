@@ -1,0 +1,9 @@
+import { render } from '@testing-library/react';
+import __Component__ from '..';
+
+describe('__Component__ Component', () => {
+  it('renders __Component__ Component correctly', () => {
+    const { container } = render(<__Component__ />);
+    expect(container).toMatchSnapshot();
+  });
+});

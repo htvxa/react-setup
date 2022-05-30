@@ -1,0 +1,10 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { initialState } from './constants';
+
+const reducer = createSlice({
+  name: REDUCER_KEY,
+  initialState,
+  reducers: {},
+});
+export const {} = reducer.actions;
+export default reducer;

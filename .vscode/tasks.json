@@ -1,0 +1,100 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
+    },
+    {
+      "id": "componentType",
+      "type": "pickString",
+      "options": ["component", "container"],
+      "default": "component",
+      "description": "What type of component do you want to create?"
+    },
+    {
+      "id": "componentName",
+      "type": "promptString",
+      "default": "MyNewComponent",
+      "description": "Name your component."
+    }
+  ],
+  "tasks": [
+    {
+      "label": "Generate Component",
+      "type": "shell",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "command": ["node"],
+      "args": [
+        "./scripts/generate/index.js",
+        "generate",
+        "${input:componentType}",
+        "${input:componentName}"
+      ],
+      "detail": "Create a template for feature or component.",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${cwd}"
+      }
+    },
+    {
+      "label": "Generate SVG Icon",
+      "type": "shell",
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "command": ["node"],
+      "args": ["./scripts/generate/index.js", "svg"],
+      "detail": "Generate SVG Icon",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${cwd}"
+      }
+    },
+    {
+      "label": "Terminate All Tasks",
+      "command": "echo ${input:terminate}",
+      "type": "shell",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "label": "Start Server",
+      "detail": "Run script scripts/start.js"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "Build Source",
+      "detail": "Run script scripts/build.js"
+    },
+    {
+      "type": "npm",
+      "script": "prettify ${relativeFile}",
+      "problemMatcher": [],
+      "label": "Prettify Code",
+      "detail": "Run CLI prettier --write"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+/**
+ * __Component__ component
+ */
+
+import { memo } from 'react';
+import { withReducerSaga } from '../../utils/withReducerSaga';
+import saga from './redux/saga';
+import { Styled__Component__ } from './styled.components';
+function __Component__() {
+  return (
+    <Styled__Component__>
+      <span>__Component__</span>
+    </Styled__Component__>
+  );
+}
+
+export default withReducerSaga(reducer, saga, memo)(__Component__);

@@ -1,0 +1,19 @@
+{
+  "eslint.nodePath": "node_modules",
+  "eslint.packageManager": "npm",
+  "stylelint.packageManager": "npm",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false,
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeLens": true,
+  "editor.detectIndentation": true,
+  "diffEditor.codeLens": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "prettier.configPath": ".prettierrc",
+  "prettier.enable": true
+}
